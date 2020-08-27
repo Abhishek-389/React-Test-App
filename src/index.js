@@ -1,16 +1,68 @@
-// import React from "react";
-// import ReactDom from "react-dom";
+import React from "react";
+import ReactDom from "react-dom";
 
-//React code which get translated using babel
-// ReactDom.render(<h1>Hello World Abhi.</h1>, document.getElementById("root"));
-
-//pure code translated by babel
+//Rendering multiple element
+//method1==>Using a div
 // ReactDom.render(
-//   /*#__PURE__*/ React.createElement("h1", null, "Hello World Abhi."),
+//   <div>
+//     <h1>Top 10 Netflix shows</h1>
+//     <p>These are my top ten Netflix seried</p>
+//     <ol>
+//       <li>Never Have I Ever</li>
+//       <li>The Baby-Sitters Club</li>
+//       <li>The Umbrella Academy</li>
+//       <li>Russian Doll</li>
+//       <li>Unbreakable Kimmy Schmidt</li>
+//     </ol>
+//   </div>,
 //   document.getElementById("root")
 // );
 
-//custom code
-let h1 = document.createElement("h1");
-h1.innerHTML = "Hello Abhi";
-document.getElementById("root").appendChild(h1);
+//method2==>Using an array  only on above react 16 version
+/*ReactDom.render(
+  [
+    <h1>Top 10 Netflix shows</h1>,
+    <p>These are my top ten Netflix seried</p>,
+    <ol>
+      <li>Never Have I Ever</li>
+      <li>The Baby-Sitters Club</li>
+      <li>The Umbrella Academy</li>
+      <li>Russian Doll</li>
+      <li>Unbreakable Kimmy Schmidt</li>
+      <li>Breakable Kimmy Schmidt</li>
+    </ol>,
+  ],
+  document.getElementById("root")
+); */
+
+//method3==>Using  --React.Fragment--
+// ReactDom.render(
+//   <React.Fragment>
+//     <h1>Top 10 Netflix shows</h1>
+//     <p>These are my top ten Netflix seried</p>
+//     <ol>
+//       <li>Never Have I Ever</li>
+//       <li>The Baby-Sitters Club</li>
+//       <li>The Umbrella Academy</li>
+//       <li>Russian Doll</li>
+//       <li>Unbreakable Kimmy Schmidt</li>
+//     </ol>
+//   </React.Fragment>,
+//   document.getElementById("root")
+// );
+
+//method4==>Using  --React.Fragment Syntactic sugar --
+ReactDom.render(
+  <>
+    <h1>Top 10 Netflix shows</h1>
+    <p>These are my top ten Netflix seried</p>
+    <ol>
+      <li>Never Have I Ever</li>
+      <li>The Baby-Sitters Club</li>
+      <li>The Umbrella Academy</li>
+      <li>Russian Doll</li>
+      <li>Breakable Kimmy Schmidt</li>
+    </ol>
+  </>,
+  document.getElementById("root")
+);
