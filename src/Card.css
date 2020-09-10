@@ -51,7 +51,10 @@ body {
   font-weight: bolder;
 }
 
-@media only screen and (max-width: 382px) {
+@media only screen and (max-width: 381px) {
+  /* body {
+    background: black;
+  } */
   .card__content {
     width: auto;
     height: auto;
@@ -60,7 +63,10 @@ body {
     min-width: auto;
   }
 }
-@media only screen and (max-width: 804px) and (min-width: 382px) {
+@media only screen and (max-width: 820px) and (min-width: 382px) {
+  /* body {
+    background: blue;
+  } */
   .card {
     min-width: 344px;
     margin: 20px 0;

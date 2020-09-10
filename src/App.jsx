@@ -8,6 +8,7 @@ function App() {
       <div className="cards">
         {data.map((obj) => (
           <Card
+            key={obj.id}
             imageSrc={obj.imageSrc}
             category={obj.category}
             title={obj.title}
