@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import Slot from "./SlotMachine";
 function App() {
+  const [date, setDate] = useState(new Date().toLocaleTimeString());
+
+  const timeHandler = () => {
+    setDate(new Date().toLocaleTimeString());
+  };
+
   return (
     <div className="container">
-      <h1>
-        🎰 Welcome to <span>Slot machine 🎰</span>
-      </h1>
-      <div className="container__slot">
-        <Slot x="😄" y="😄" z="😄" />
-        <Slot x="😸" y="😄" z="😄" />
-        <Slot x="😄" y="😄" z="😄" />
-      </div>
+      <h1 style={{ fontWeight: "lighter", padding: "16px" }}>{date}</h1>
+      <button onClick={timeHandler}>Click</button>
     </div>
   );
 }
