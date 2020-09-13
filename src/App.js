@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import "./App.css";
 function App() {
-  const [bg, setBg] = useState("grey");
-  const [text, setText] = useState("Wow 🚁");
+  const [userName, setUserName] = useState("");
   return (
-    <div className="container" style={{ background: bg }}>
-      <h1>{text}</h1>
+    <div className="container">
+      <h1>
+        Hello <span id="user"></span>
+      </h1>
+      <input
+        value={userName}
+        onChange={(event) => setUserName(event.target.value)}
+        placeholder="Enter your username..."
+        type="text"
+      />
       <button
         onClick={() => {
-          setBg("red");
-          setText("Amazing 🏺");
-        }}
-        onDoubleClick={() => {
-          setBg("blue");
-          setText("Shock 🏺");
+          document.getElementById("user").innerHTML = userName;
+          setUserName("");
         }}
       >
-        Click me
+        Submit
       </button>
     </div>
   );
