@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import "./App.css";
 function App() {
-  const [date, setDate] = useState(new Date().toLocaleTimeString());
-
-  setTimeout(() => {
-    setDate(new Date().toLocaleTimeString());
-  }, 1000);
-
+  const [bg, setBg] = useState("grey");
+  const [text, setText] = useState("Wow 🚁");
   return (
-    <div className="container">
-      <h1 style={{ fontWeight: "lighter", padding: "16px", fontSize: "9rem" }}>
-        {date}
-      </h1>
+    <div className="container" style={{ background: bg }}>
+      <h1>{text}</h1>
+      <button
+        onClick={() => {
+          setBg("red");
+          setText("Amazing 🏺");
+        }}
+        onDoubleClick={() => {
+          setBg("blue");
+          setText("Shock 🏺");
+        }}
+      >
+        Click me
+      </button>
     </div>
   );
 }
