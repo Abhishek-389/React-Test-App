@@ -7,6 +7,15 @@ function App() {
     userPhone: "",
     userEmail: "",
   });
+  const handleInput = (event) => {
+    const { name, value } = event.target;
+    setUserDetail((previousData) => {
+      return {
+        ...previousData,
+        [name]: value,
+      };
+    });
+  };
   return (
     <form>
       <div className="container">
@@ -17,55 +26,30 @@ function App() {
         <h3 id="userPhone"></h3>
         <input
           value={userDetail.userName}
-          onChange={(event) =>
-            setUserDetail({
-              userName: event.target.value,
-              userPassword: userDetail.userPassword,
-              userEmail: userDetail.userEmail,
-            })
-          }
+          onChange={handleInput}
           placeholder="Enter your username..."
           type="text"
           name="userName"
         />
         <input
           value={userDetail.userEmail}
-          onChange={(event) =>
-            setUserDetail({
-              userName: userDetail.userName,
-              userPassword: userDetail.userPassword,
-              userEmail: event.target.value,
-            })
-          }
+          onChange={handleInput}
           placeholder="Enter your email..."
           type="email"
-          name="userPassword"
+          name="userEmail"
         />
         <input
           value={userDetail.userPassword}
-          onChange={(event) =>
-            setUserDetail({
-              userName: userDetail.userName,
-              userPassword: event.target.value,
-              userEmail: userDetail.userEmail,
-            })
-          }
+          onChange={handleInput}
           placeholder="Enter your password..."
           type="password"
           name="userPassword"
         />
         <input
           value={userDetail.userPhone}
-          onChange={(event) =>
-            setUserDetail({
-              userName: userDetail.userName,
-              userPassword: userDetail.userPassword,
-              userEmail: userDetail.userEmail,
-              userPhone: event.target.value,
-            })
-          }
+          onChange={handleInput}
           placeholder="Enter your phone number..."
-          // type="number"
+          type="number"
           name="userPhone"
         />
         <button
