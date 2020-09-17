@@ -5,6 +5,7 @@
   width: 100vw;
   background: rgb(190, 179, 179);
   color: white;
+  overflow: scroll;
 }
 .container {
   display: flex;
