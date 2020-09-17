@@ -4,6 +4,7 @@ function App() {
   const [userDetail, setUserDetail] = useState({
     userName: "",
     userPassword: "",
+    userPhone: "",
     userEmail: "",
   });
   return (
@@ -13,6 +14,7 @@ function App() {
           Hello <span id="user"></span>
         </h1>
         <h3 id="userEmail"></h3>
+        <h3 id="userPhone"></h3>
         <input
           value={userDetail.userName}
           onChange={(event) =>
@@ -52,12 +54,28 @@ function App() {
           type="password"
           name="userPassword"
         />
+        <input
+          value={userDetail.userPhone}
+          onChange={(event) =>
+            setUserDetail({
+              userName: userDetail.userName,
+              userPassword: userDetail.userPassword,
+              userEmail: userDetail.userEmail,
+              userPhone: event.target.value,
+            })
+          }
+          placeholder="Enter your phone number..."
+          // type="number"
+          name="userPhone"
+        />
         <button
           onClick={(event) => {
             event.preventDefault();
             document.getElementById("user").innerHTML = userDetail.userName;
             document.getElementById("userEmail").innerHTML =
               userDetail.userEmail;
+            document.getElementById("userPhone").innerHTML =
+              userDetail.userPhone;
           }}
         >
           Submit
