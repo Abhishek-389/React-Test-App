@@ -1,19 +1,20 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import Comp3 from "./Comp3";
-import { Data, Data2 } from "./App";
 
 function Comp2() {
-  const [data1, setData1] = useContext(Data);
-  const data2 = useContext(Data2);
+  const [data2, setData2] = useState("I am the data from comp2");
+  useEffect(() => {
+    console.log("I am the useEffec of second coomp");
+  });
   return (
     <div>
-      <h1>{data1}</h1>
-      <h1>{data2}</h1>
-      <button onClick={() => setData1("Abhishek is a very bad boy")}>
-        {" "}
-        Click me
+      <button
+        onClick={() => {
+          setData2(data2 + "a");
+        }}
+      >
+        Click me from comp 2
       </button>
-      <h1>------------</h1>
       <Comp3 />
     </div>
   );

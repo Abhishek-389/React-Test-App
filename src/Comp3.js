@@ -1,23 +1,19 @@
-import React from "react";
-import { Data, Data2 } from "./App";
+import React, { useEffect, useState } from "react";
+
 function Comp3() {
+  const [data3, setData3] = useState("I am the data3 from comp3");
+  useEffect(() => {
+    console.log("I am the useEffec of third coomp");
+  });
   return (
     <div>
-      <Data.Consumer>
-        {(data) => {
-          return (
-            <>
-              <h1>{data}</h1>
-              <Data2.Consumer>
-                {(data2) => {
-                  return <h2>{data2}</h2>;
-                }}
-              </Data2.Consumer>
-              ;
-            </>
-          );
+      <button
+        onClick={() => {
+          setData3(data3 + "a");
         }}
-      </Data.Consumer>
+      >
+        Click me from comp 3
+      </button>
     </div>
   );
 }
