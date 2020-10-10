@@ -18,7 +18,7 @@ function App() {
         <Route path="/about" component={AboutPage} exact />
         <Route path="/contact" component={ContactPage} exact />
         <Route path="/services" component={ServicesPage} exact />
-        <Route path="/blog" render={() => <Blog name="Harry" />} exact />
+        <Route path="/blog/:writer/:date" component={Blog} exact />
         <Route component={NotFoundPage} />
       </Switch>
     </>
