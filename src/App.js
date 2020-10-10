@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import AboutPage from "./AboutPage";
 import Indexpage from "./IndexPage";
@@ -21,6 +21,7 @@ function App() {
         <Route path="/services" component={ServicesPage} exact />
         <Route path="/blog/:writer/:date" component={Blog} exact />
         <Route path="/search" component={Search} exact />
+        <Redirect to="/" />
         <Route component={NotFoundPage} />
       </Switch>
     </>
