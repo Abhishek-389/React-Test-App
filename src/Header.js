@@ -17,6 +17,16 @@ function Header() {
       >
         Contact
       </NavLink>
+      <NavLink exact activeStyle={{ textDecoration: "underline" }} to="/search">
+        Search
+      </NavLink>
+      <NavLink
+        exact
+        activeStyle={{ textDecoration: "underline" }}
+        to="/blog/Abhi/200"
+      >
+        Blog
+      </NavLink>
     </header>
   );
 }

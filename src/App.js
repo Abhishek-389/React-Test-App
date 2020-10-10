@@ -7,6 +7,7 @@ import ContactPage from "./ContactPage";
 import ServicesPage from "./ServicesPage";
 import NotFoundPage from "./NotFoundPage";
 import Blog from "./Blog";
+import Search from "./Search";
 import "./App.css";
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact" component={ContactPage} exact />
         <Route path="/services" component={ServicesPage} exact />
         <Route path="/blog/:writer/:date" component={Blog} exact />
+        <Route path="/search" component={Search} exact />
         <Route component={NotFoundPage} />
       </Switch>
     </>
